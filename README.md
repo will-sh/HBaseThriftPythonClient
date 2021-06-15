@@ -25,4 +25,15 @@ Preparation steps:
 - Install kerberos client and modify krb5.conf in your app server.
 - make sure the app server can authenticate to CDH/CDP using latest hbase.keytab.
 
+Demo:
+```
+Python App- Interact with HBase Thrift Proxy
 
+> [1] Show All Tables  
+  [2] Create Table  
+  [3] Enable Table  
+  [4] Disable Table  
+  [5] Delete Table  
+  [6] Manipulate Table  
+  [7] Quit 
+``` 
