@@ -27,7 +27,7 @@ Preparation steps:
 
 Demo:
 ```
-Python App- Interact with HBase Thrift Proxy
+Python App - Interact with HBase Thrift Proxy
 
 > [1] Show All Tables  
   [2] Create Table  
