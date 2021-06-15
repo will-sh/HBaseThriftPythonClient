@@ -100,8 +100,10 @@ def main(client):
             main_menu_exit = True
             print("Thanks for playing! Bye!")
             time.sleep(1)
+
 if __name__ == "__main__":
     f.kinit()
+    f.pbar()
     client,transport=f.connect(hbase_thrift_server_host,hbase_thrift_server_port)
     transport.open()
     main(client)

@@ -3,6 +3,13 @@ from thrift.protocol import TBinaryProtocol
 from thrift.transport import TTransport
 from hbase import Hbase
 from subprocess import call
+import time
+import progressbar
+
+def pbar():
+  print("\nInitializing app\n")
+  for i in progressbar.progressbar(range(100)):
+    time.sleep(0.03)
 
 def test():
   print("I'm test in functions.py")
@@ -14,6 +21,7 @@ def kinit():
   keytab="/root/HBaseThrift/c1677.keytab"
   kinitCommand="kinit"+" "+"-kt"+" "+keytab+" "+principal
   call(kinitCommand,shell="True")
+  call("klist",shell="True")
 
 def connect(thrift_host,thrift_port):
   socket = TSocket.TSocket(thrift_host, thrift_port)
