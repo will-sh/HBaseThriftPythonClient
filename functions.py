@@ -18,7 +18,7 @@ def kinit():
   krb5_server='c1677-node1.coelab.cloudera.com'
   krb_service='hbase'
   principal='hbase/c1677-node4.coelab.cloudera.com'
-  keytab="/root/HBaseThrift/c1677.keytab"
+  keytab="/root/keytabs/c1677.keytab"
   kinitCommand="kinit"+" "+"-kt"+" "+keytab+" "+principal
   call(kinitCommand,shell="True")
   call("klist",shell="True")
