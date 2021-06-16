@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 
-import time
+import time,os
 import functions as f
 from simple_term_menu import TerminalMenu
 
 #CDP6.3.4 kerberos enabled
-hbase_thrift_server_host = 'c1677-node4.coelab.cloudera.com'
-hbase_thrift_server_port = 9090
+domain=".coelab.cloudera.com"
 
 def main(client):
     main_menu_title = "Python App - Interact with HBase Thrift Proxy\n"
@@ -93,7 +92,12 @@ def main(client):
             print("Thanks for playing! Bye!")
 
 if __name__ == "__main__":
-    f.kinit()
+    os.system('clear')
+    cluster_shortname=input("Enter squadron cluster's short name (e.g c1677):\n")
+    thrift_node = input("Which node is thrift server located at? (e.g node4)\n")
+    hbase_thrift_server_host=cluster_shortname+"-"+thrift_node+domain
+    hbase_thrift_server_port = 9090
+    f.kinit(cluster_shortname,hbase_thrift_server_host)
     f.pbar()
     client,transport=f.connect(hbase_thrift_server_host,hbase_thrift_server_port)
     transport.open()

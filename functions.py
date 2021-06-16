@@ -14,11 +14,12 @@ def pbar():
 def test():
   print("I'm test in functions.py")
 
-def kinit():
-  krb5_server='c1677-node1.coelab.cloudera.com'
+def kinit(cluster_short,hbase_thrift_server_host):
   krb_service='hbase'
-  principal='hbase/c1677-node4.coelab.cloudera.com'
-  keytab="/root/keytabs/c1677.keytab"
+  principal=krb_service+'/'+hbase_thrift_server_host
+  print(principal)
+  keytab="/root/keytabs/"+cluster_short+".keytab"
+  print(keytab)
   kinitCommand="kinit"+" "+"-kt"+" "+keytab+" "+principal
   call(kinitCommand,shell="True")
   call("klist",shell="True")
