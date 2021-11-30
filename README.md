@@ -1,39 +1,50 @@
 # HBaseThriftPythonClient
 
-An interactive client app play with HBase Thrift server with kerberos enabled.
+TSaslClientTransport and THttpClient example for hbase thrift python client.
 
 The thrift bindings are compiled using Apache Thrift compiler.
 
+Compile steps:
 https://thrift.apache.org/docs/install/
+https://docs.cloudera.com/runtime/7.2.10/accessing-hbase/topics/hbase-use-apache-thrift-proxy-api.html
 
-Features:
+Requirements:
 
-- Codes only work in Python 3
-- Support Kerberos in both thrift 0.9 and thrift 0.13
-- Implemented progressbar  
-  Install per  
-  `sudo pip3 install progressbar2`   
-  https://github.com/WoLpH/python-progressbar
-- Implemented simple-term-menu  
-  Install per  
-  `sudo pip3 install simple-term-menu`  
-  https://github.com/IngoMeyer441/simple-term-menu
+yum install cyrus-sasl-devel,python3,python3-devel
+pip3 install virtualenv 
+virtualenv py3env
+source py3env/bin/activate
 
-Preparation steps:
-- Prepare CDH6/CDP HBase environment by yourself, enable kerberos in your cluster.
-  https://docs.cloudera.com/cdp-private-cloud-base/7.1.6/installation/topics/cdpdc-installation.html
-- Install kerberos client and modify krb5.conf in your app server.
-- make sure the app server can authenticate to CDH/CDP using latest hbase.keytab.
+Python version: 3.6.8
+pip version: 21.3.1
+pip list:
+Package    Version
+---------- -------
+kerberos   1.3.1
+pip        21.3.1
+pure-sasl  0.6.2
+sasl       0.3.1
+setuptools 58.3.0
+six        1.16.0
+wheel      0.37.0
 
-Demo:
-```
-Python App - Interact with HBase Thrift Proxy
+1. TSaslTransport
+HBase configs:
+hbase.regionserver.thrift.http = false
+hbase.thrift.support.proxyuser = true
+hbase.regionserver.thrift.framed = false
+hbase.regionserver.thrift.compact = false
+hbase.thrift.security.qop = auth-conf
 
-> [1] Show All Tables  
-  [2] Create Table  
-  [3] Enable Table  
-  [4] Disable Table  
-  [5] Delete Table  
-  [6] Manipulate Table  
-  [7] Quit 
-``` 
+2. THttpClient
+HBase configs:
+hbase.thrift.ssl.enabled = true
+ihbase.regionserver.thrift.http = true
+hbase.thrift.support.proxyuser = true
+hbase.regionserver.thrift.framed = false
+hbase.regionserver.thrift.compact = false
+hbase.thrift.security.qop = auth-conf
+
+Note:
+1. TSaslClientTransport works only after CDP 7.1.7, the earlier CDP version has known bug https://issues.apache.org/jira/browse/HBASE-21652
+2. THttpClient can work in all CDP version with kerberos and SSL enabled at same time.
