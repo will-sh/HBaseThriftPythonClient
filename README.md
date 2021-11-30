@@ -10,23 +10,23 @@ https://docs.cloudera.com/runtime/7.2.10/accessing-hbase/topics/hbase-use-apache
 
 Requirements:
 
-yum install cyrus-sasl-devel,python3,python3-devel
-pip3 install virtualenv 
-virtualenv py3env
-source py3env/bin/activate
+yum install cyrus-sasl-devel,python3,python3-devel  
+pip3 install virtualenv  
+virtualenv py3env  
+source py3env/bin/activate  
 
-Python version: 3.6.8
-pip version: 21.3.1
-pip list:
+Python version: 3.6.8  
+pip version: 21.3.1  
+pip list:  
 Package    Version
 ---------- -------
-kerberos   1.3.1
-pip        21.3.1
-pure-sasl  0.6.2
-sasl       0.3.1
-setuptools 58.3.0
-six        1.16.0
-wheel      0.37.0
+kerberos   1.3.1  
+pip        21.3.1  
+pure-sasl  0.6.2  
+sasl       0.3.1  
+setuptools 58.3.0  
+six        1.16.0  
+wheel      0.37.0  
 
 1. TSaslTransport
 HBase configs:
