@@ -20,8 +20,7 @@ source py3env/bin/activate
 Python version: 3.6.8  
 pip version: 21.3.1  
 pip list:  
-Package    Version
---------   -------
+Package    Version:
 kerberos   1.3.1  
 pip        21.3.1  
 pure-sasl  0.6.2  
