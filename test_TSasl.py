@@ -5,12 +5,18 @@ from hbase import Hbase
 import kerberos
 import sasl
 from subprocess import call
-thrift_host='c2677-node4.coelab.cloudera.com'
+
+# Replace the <hostname> with your thrift server hostname
+# Replace <REALM>,<PID> with yours
+
+thrift_host='<hostname>'
 thrift_port=9090
+
 # call kinit commands to get the kerberos ticket. 
+
 krb_service='hbase'
-principal='hbase/c2677-node4.coelab.cloudera.com@COELAB.CLOUDERA.COM'
-keytab="/run/cloudera-scm-agent/process/1546335371-hbase-HBASETHRIFTSERVER/hbase.keytab"
+principal='hbase/<hostname>@<REALM>'
+keytab="/run/cloudera-scm-agent/process/<PID>-hbase-HBASETHRIFTSERVER/hbase.keytab"
 kinitCommand="kinit"+" "+"-kt"+" "+keytab+" "+principal
 call(kinitCommand,shell="True")
 socket = TSocket.TSocket(thrift_host, thrift_port)
