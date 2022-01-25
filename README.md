@@ -30,21 +30,21 @@ six        1.16.0
 wheel      0.37.0  
 
 1. TSaslTransport
-HBase configs:
-hbase.regionserver.thrift.http = false
-hbase.thrift.support.proxyuser = true
-hbase.regionserver.thrift.framed = false
-hbase.regionserver.thrift.compact = false
-hbase.thrift.security.qop = auth-conf
+HBase configs:  
+hbase.regionserver.thrift.http = false  
+hbase.thrift.support.proxyuser = true  
+hbase.regionserver.thrift.framed = false  
+hbase.regionserver.thrift.compact = false  
+hbase.thrift.security.qop = auth-conf  
 
-2. THttpClient
-HBase configs:
-hbase.thrift.ssl.enabled = true
-ihbase.regionserver.thrift.http = true
-hbase.thrift.support.proxyuser = true
-hbase.regionserver.thrift.framed = false
-hbase.regionserver.thrift.compact = false
-hbase.thrift.security.qop = auth-conf
+2. THttpClient  
+HBase configs:  
+hbase.thrift.ssl.enabled = true  
+ihbase.regionserver.thrift.http = true  
+hbase.thrift.support.proxyuser = true  
+hbase.regionserver.thrift.framed = false  
+hbase.regionserver.thrift.compact = false  
+hbase.thrift.security.qop = auth-conf  
 
 Note:
 1. TSaslClientTransport works only after CDP 7.1.7, the earlier CDP version has known bug https://issues.apache.org/jira/browse/HBASE-21652
