@@ -12,10 +12,12 @@ https://docs.cloudera.com/runtime/7.2.10/accessing-hbase/topics/hbase-use-apache
 
 Requirements:
 
-yum install cyrus-sasl-devel,python3,python3-devel  
-pip3 install virtualenv  
-virtualenv py3env  
-source py3env/bin/activate  
+yum install cyrus-sasl-devel python3 python3-devel gcc-c++ 
+pip3 install -upgrade pip
+pip3 install virtualenv
+virtualenv py3env
+source py3env/bin/activate
+pip3 install -r requirements.txt
 
 Python version: 3.6.8  
 pip version: 21.3.1  
