@@ -2,15 +2,15 @@
 
 TSaslClientTransport and THttpClient example for hbase thrift python client.
 
-The thrift bindings are compiled using Apache Thrift compiler.
+The thrift python bindings are compiled using Apache Thrift compiler.
 
-Compile steps:
+## Compile steps:
 
 https://thrift.apache.org/docs/install/
 
 https://docs.cloudera.com/runtime/7.2.10/accessing-hbase/topics/hbase-use-apache-thrift-proxy-api.html
 
-Requirements:
+## Requirements:
 
 Python version: 3.6.8
 pip version: 21.3.1
@@ -21,12 +21,12 @@ virtualenv py3env
 source py3env/bin/activate  
 pip3 install -r requirements.txt  
 
-Package    Version:  
+### Package    Version:  
 kerberos   1.3.1  
 pip        21.3.1  
 six        1.16.0  
-pure-sasl  0.6.2
-setuptools 58.3.0
+pure-sasl  0.6.2  
+setuptools 58.3.0  
 wheel      0.37.0  
 
 Note:
