@@ -1,6 +1,7 @@
 from thrift.transport import THttpClient
 from thrift.protocol import TBinaryProtocol
 from hbase.Hbase import Client
+import socket
 
 # Assume running the code at hbase thrift server
 
