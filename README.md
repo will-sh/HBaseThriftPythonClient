@@ -22,14 +22,12 @@ virtualenv py3env
 source py3env/bin/activate  
 pip3 install -r requirements.txt  
 
-#pip list:  
 Package    Version:  
 kerberos   1.3.1  
 pip        21.3.1  
-pure-sasl  0.6.2  
-sasl       0.3.1  
-setuptools 58.3.0  
 six        1.16.0  
+pure-sasl  0.6.2
+setuptools 58.3.0
 wheel      0.37.0  
 
 Note:

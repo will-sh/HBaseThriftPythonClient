@@ -2,8 +2,9 @@ from thrift.transport import THttpClient
 from thrift.protocol import TBinaryProtocol
 from hbase.Hbase import Client
 
-# Replace with your own parameters
-hostname = 'your_hbase_hostname'
+# Assume running the code at hbase thrift server
+
+hostname = socket.gethostname()
 
 # Initialize THttpClient
 httpClient = THttpClient.THttpClient('http://' + hostname + ':9090/')
