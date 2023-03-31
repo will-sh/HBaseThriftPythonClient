@@ -15,7 +15,6 @@ Requirements:
 Python version: 3.6.8
 pip version: 21.3.1
 
-yum install cyrus-sasl-devel python3 python3-devel gcc-c++   
 pip3 install --upgrade pip  
 pip3 install virtualenv  
 virtualenv py3env  
